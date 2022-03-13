@@ -3,91 +3,22 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>TLL-2040/12/15</title>
+  <title>Tokyo Bay 2022</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/custom.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<div style='position: fixed;
-  bottom: 15px;
-  left: 20px;
-  width:100%;
-  text-align: left;
-  z-index: 1;'>
-    <a href="1-tube1.html"><button class="button">SKIP</button></a>
-</div>
-
-<div style='position: fixed;
-top: 15px;
-left: 20px;
-width:100%;
-text-align: left;
-z-index: 1;'>
-  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
-</div>
-
 </head>
 
 <body>
 
   <script>
-  AFRAME.registerComponent("talk0", {
+  AFRAME.registerComponent("enter0", {
     init: function() {
-       var pieces = document.querySelectorAll(".chat, .clickable")
+       var pieces = document.querySelectorAll(".act, .clickable")
        this.el.addEventListener("click", e => {
          for (let piece of pieces) {
            piece.emit("show0")}
-       }, {once: true})
-     }
-  })
-
-  AFRAME.registerComponent("proc1", {
-    init: function() {
-      var pieces = document.querySelectorAll(".chat, .clickable")
-       this.el.addEventListener("click", e => {
-         for (let piece of pieces) {
-           piece.emit("show1")}
-       }, {once: true})
-     }
-  })
-
-  AFRAME.registerComponent("proc2", {
-    init: function() {
-      var pieces = document.querySelectorAll(".chat, .clickable")
-       this.el.addEventListener("click", e => {
-         for (let piece of pieces) {
-           piece.emit("show2")}
-       }, {once: true})
-     }
-  })
-
-  AFRAME.registerComponent("proc3", {
-    init: function() {
-       var pieces = document.querySelectorAll(".chat, .clickable")
-       this.el.addEventListener("click", e => {
-         for (let piece of pieces) {
-           piece.emit("show3")}
-       }, {once: true})
-     }
-  })
-
-  AFRAME.registerComponent("proc4", {
-    init: function() {
-      var pieces = document.querySelectorAll(".chat, .clickable")
-       this.el.addEventListener("click", e => {
-         for (let piece of pieces) {
-           piece.emit("show4")}
-       }, {once: true})
-     }
-  })
-
-  AFRAME.registerComponent("proc5", {
-    init: function() {
-      var pieces = document.querySelectorAll(".chat, .clickable")
-       this.el.addEventListener("click", e => {
-         for (let piece of pieces) {
-           piece.emit("show5")}
        }, {once: true})
      }
   })
@@ -111,251 +42,28 @@ z-index: 1;'>
 loading-screen="dotsColor: black; backgroundColor: #F1F1F1">
 
   <a-assets>
-    <img id="sky" src="images/cargo.jpg" alt="background">
-    <img id="talk" src="images/screen/talk.png" alt="talk button">
-    <img id="proceed" src="images/screen/proceed.png" alt="proceed button">
-    <img id="cabin" src="images/direction/cabin.png" alt="next page">
+    <img id="sky" src="images/isozaki.jpg" alt="background">
+    <img id="enter" src="images/enter.png" alt="proceed button">
   </a-assets>
 
   <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
-  <a-image class="clickable" id="talkbutton"
-   src= "#talk"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05"
+  <a-image class="clickable" id="enterbutton"
+   src= "#enter"
+   width="0.5" height="0.7" rotation="0 180 0" position="0.55 1.5 2.5"
    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
    animation__off0="startEvents: show0; property: scale; to: 0 0 0; dur: 100"
-   talk0>
+   enter0>
   </a-image>
 
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1 1.7 0.1"
-    value="We're here right on sunrise!
-    Thank you for this lift, bro"
+  <a-text class="act"
+    opacity="0" line-height=55 width="5" rotation="0 180 0"
+    color="black" align=left position="0.9 1.5 2.5"
+    value="Content Not
+    Yet Available"
     animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500"
-    animation__hide1="startEvents: show1; property: visible; to: false">
+    animation__hide0="startEvents: show0; property: opacity; to: 0; dur: 500; delay: 4500">
   </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1 1.7 0.2"
-    value="I was gonna say thank you,
-    nobody wanna solo crew
-    across Baltic in winter."
-    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500; delay: 2500"
-    animation__hide1="startEvents: show1; property: visible; to: false">
-  </a-text>
-
-  <a-image class="clickable" id="rep1"
-   src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-   animation__on0="startEvents: show0; property: scale; to: 1 1 1; delay: 3500; dur: 100"
-   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__off1="startEvents: show1; property: scale; to: 0 0 0; dur: 100"
-   proc1>
-  </a-image>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.01 1.7 0.1"
-    value="so the cabins were
-    designed for how many?"
-    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500"
-    animation__hide2="startEvents: show2; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.01 1.9 0.2"
-    value="20-30 from my memory;
-    it's a 2015 model before
-    the auto things came in..."
-    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 2000"
-    animation__hide2="startEvents: show2; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.01 1.65 0.2"
-    value="guess how I caught up
-    with system training tasks
-    before being laid off?"
-    animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 5000"
-    animation__hide2="startEvents: show2; property: visible; to: false">
-  </a-text>
-
-  <a-image class="clickable" id="rep2"
-   src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-   animation__on1="startEvents: show1; property: scale; to: 1 1 1; delay: 6000; dur: 100"
-   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__off2="startEvents: show2; property: scale; to: 0 0 0; dur: 100"
-   proc2>
-  </a-image>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.02 1.7 0.1"
-    value="You told me at least
-    10 times on this ride..."
-    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500"
-    animation__hide3="startEvents: show3; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.02 1.9 0.2"
-    value="Haha, my bad...
-    so tell more about you,
-    I know the 90-day thing for
-    E-Estonians and that you
-    can't find a winter cruise,"
-    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 2000"
-    animation__hide3="startEvents: show3; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.02 1.65 0.2"
-    value="But why winter? Tallinn is
-    literally a ghost city right now."
-    animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 5000"
-    animation__hide3="startEvents: show3; property: visible; to: false">
-  </a-text>
-
-  <a-image class="clickable" id="rep3"
-   src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-   animation__on2="startEvents: show2; property: scale; to: 1 1 1; delay: 6000; dur: 100"
-   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__off3="startEvents: show3; property: scale; to: 0 0 0; dur: 100"
-   proc3>
-  </a-image>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.03 1.9 0.1"
-    value="I was trying to avoid the
-    TAU variant cases back in summer
-    and now have to come before my
-    E-Residency year ends..."
-    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500"
-    animation__hide4="startEvents: show4; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.03 1.65 0.1"
-    value="my friend there said they still
-    have Christmas events though..."
-    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 4000"
-    animation__hide4="startEvents: show4; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.03 1.7 0.2"
-    value="I see... is it true that
-    you can get any drugs at
-    Baltic Quarantine Resort?"
-    animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 8000"
-    animation__hide4="startEvents: show4; property: visible; to: false">
-  </a-text>
-
-  <a-image class="clickable" id="rep4"
-   src= "#proceed"
-   width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-   animation__on3="startEvents: show3; property: scale; to: 1 1 1; delay: 9000; dur: 100"
-   animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-   animation__off4="startEvents: show4; property: scale; to: 0 0 0; dur: 100"
-   proc4>
-  </a-image>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.04 1.9 0.1"
-    value="No, but any test methods
-    you can imagine... anyway,
-    it's probably quieter than here now
-    with more robots than people."
-    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500"
-    animation__hide5="startEvents: show5; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="white" align=right position="1.04 1.65 0.1"
-    value="I've got a cheaper cell at
-    Kopli Station for my arrival week."
-    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 4000"
-    animation__hide5="startEvents: show5; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.04 1.9 0.2"
-    value="Kopli?...Man I don't know how
-    Estonia Health advertised it
-    but I'd avoid for sure."
-    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 8000"
-    animation__hide5="startEvents: show5; property: visible; to: false">
-  </a-text>
-
-  <a-text class="chat"
-    opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-    color="#99CCFF" align=left position="1.04 1.65 0.2"
-    value="Its nothing but a dump field
-    after industries closed,
-    even the Russians have left..."
-    animation__show4="startEvents: show4; property: opacity; to: 1; dur: 500; delay: 11000"
-    animation__hide5="startEvents: show5; property: visible; to: false">
-  </a-text>
-
-    <a-image class="clickable" id="rep5"
-     src= "#proceed"
-     width="0.2" height="0.1" rotation="0 -90 0" position="1 1.5 -0.05" scale="0 0 0"
-     animation__on4="startEvents: show4; property: scale; to: 1 1 1; delay: 12000; dur: 100"
-     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-     animation__off5="startEvents: show5; property: scale; to: 0 0 0; dur: 100"
-     proc5>
-    </a-image>
-
-    <a-text class="chat"
-      opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-      color="white" align=right position="1.05 1.7 0.1"
-      value="Really? It's just 1 kilo away
-      from oldtown so I thought
-      it could be lively..."
-      animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500">
-    </a-text>
-
-    <a-text class="chat"
-      opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-      color="#99CCFF" align=left position="1.05 1.7 0.2"
-      value="haha but its outside of
-      the tram belt so it's
-      irrelevant, right?"
-      animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500; delay: 2500">
-    </a-text>
-
-    <a-text class="chat"
-      opacity="0" line-height=55 width="1.2" rotation="0 -90 0"
-      color="#99CCFF" align=left position="1.05 1.5 0.25"
-      value="All right, we gotta go
-      pack up for landing - -"
-      animation__show5="startEvents: show5; property: opacity; to: 1; dur: 500; delay: 4000">
-    </a-text>
-
-   <a-image id="out" class="clickable"
-      src= "#cabin" scale="0 0 0"
-      animation__on5="startEvents: show5; property: scale; to: 1 1 1; delay: 4500; dur: 100"
-      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-      width="0.5" height="0.5"
-      position="0 1.85 2.5"
-      rotation="0 180 0"
-      opacity=0.8
-      weblink="url: 1-tube1.html">
-    </a-image>
 
 </a-scene>
 
